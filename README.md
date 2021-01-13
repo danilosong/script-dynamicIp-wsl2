@@ -46,7 +46,7 @@ Salve o arquivo em extensão .ps1 (script powershell), exemplo. "script.ps1".
 4. Agora vamos agendar a execução do script, para isso abra o executar win+r e escreva taskschd.msc. Após abrir o Agendador de tarefas clique em 
 "Criar tarefa..." que se encontra no canto direito da tela.
 5. Na aba Geral dê o nome e descrição a tarefa e selecione o checkbox
-**- [x] Executar com privilégios mais altos.**
+**[x] Executar com privilégios mais altos.**
 6. Na aba Disparadores clique em "novo...", após isso configure da seguinte forma. Iniciar tarega : "Ao fazer logon", Selecione um usuário em especifico caso queira , nas configurações avançadas marque: 
 **- [x] ** Atrasar a tarefa em**
 digite o valor de "10 segundos" e clique em "Ok".
