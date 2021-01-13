@@ -47,8 +47,12 @@ Salve o arquivo em extensão .ps1 (script powershell), exemplo. "script.ps1".
 
 4. Agora vamos agendar a execução do script, para isso abra o executar win+r e escreva taskschd.msc. Após abrir o Agendador de tarefas clique em 
 "Criar tarefa..." que se encontra no canto direito da tela.
-5. Na aba Geral dê o nome e descrição a tarefa e selecione o checkbox **✅ Executar com privilégios mais altos.**
+5. Na aba **Geral** dê o nome e descrição a tarefa e selecione o checkbox **✅ Executar com privilégios mais altos.**
 
-6. Na aba Disparadores clique em "novo...", após isso configure da seguinte forma. Iniciar tarega : "Ao fazer logon", Selecione um usuário em especifico caso queira , nas configurações avançadas marque: **✅ Atrasar a tarefa em**, digite o valor de "10 segundos" e clique em "Ok".
+6. Na aba **Disparadores** clique em "novo...", após isso configure da seguinte forma. Iniciar tarega : "Ao fazer logon", Selecione um usuário em especifico caso queira , nas configurações avançadas marque: **✅ Atrasar a tarefa em**, digite o valor de "10 segundos" e clique em "Ok".
 
-7. Na aba Ações clique em "novo...", após abrir a tela em "Ação" selecione a opção "Iniciar um programa", nas Configurações  Programa/script escreve "powershell" e em "Adicionar argumentos" escreva -ExecutionPolicy Bypass -File "C:\local do script\script.ps1", edite para o caminho do seu script.
+7. Na aba **Ações** clique em "novo...", após abrir a tela em "Ação" selecione a opção "Iniciar um programa", nas Configurações  Programa/script escreve "powershell" e em "Adicionar argumentos" escreva -ExecutionPolicy Bypass -File "C:\local do script\script.ps1", edite para o caminho do seu script após clique em "ok".
+
+8. EXTRA, caso queira definir um nome "dominio" para o ip basta editar como administrador  o arquivo "C:\Windows\System32\drivers\etc" (Eu uso notepad++ que facilita a execução como administrador) e acrescentar a linha "SEUIPLOCAL  NOMEDODOMINIO" no meu caso ficou "192.168.1.5			dev.song".
+
+Basta reiniciar o computador para testar, espero ter ajudado e até...😃😃😃 
