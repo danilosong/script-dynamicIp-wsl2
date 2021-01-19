@@ -30,6 +30,11 @@ $ports=@(80,443,10000,3000,5000,8000,8001);
 $addr=(Get-NetIPAddress | Where-Object {$_.AddressState -eq "Preferred" -and $_.ValidLifetime -lt "24:00:00"}).IPAddress;
 $ports_a = $ports -join ",";
 
+#Reescrevendo o arquivo hosts (opcional caso nao queira só remover esta linha de codigo abaixo) INICIO
+$newvalue="dev.song	"+$addr;
+$lineHosts = (Get-Content "$($env:windir)\system32\Drivers\etc\hosts" ) -Match "dev.song";
+(Get-Content C:\Windows\system32\Drivers\etc\hosts).replace($lineHosts, $newvalue) | Set-Content C:\Windows\system32\Drivers\etc\hosts
+#Reescrevendo FIM
 
 #Remove as regras de exceção de firewall
 iex "Remove-NetFireWallRule -DisplayName 'WSL 2 Firewall Unlock' ";
