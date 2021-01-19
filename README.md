@@ -26,7 +26,8 @@ $ports=@(80,443,10000,3000,5000,8000,8001);
 #[IP estatico]
 #Você pode alterar o endereço de configuração do seu ip para para um endereço específico PS: no meu caso estou usando ip local da minha maquina(windows)
 #Caso não saiba o ip local, execute o comando "ipconfig" no powershell
-$addr='000.000.000.000';
+#Atualização, utlizei um comando para ser pego o proprio ipv4 do win
+$addr=(Get-NetIPAddress | Where-Object {$_.AddressState -eq "Preferred" -and $_.ValidLifetime -lt "24:00:00"}).IPAddress;
 $ports_a = $ports -join ",";
 
 
