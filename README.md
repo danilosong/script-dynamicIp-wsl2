@@ -31,7 +31,7 @@ $addr=(Get-NetIPAddress | Where-Object {$_.AddressState -eq "Preferred" -and $_.
 $ports_a = $ports -join ",";
 
 #Reescrevendo o arquivo hosts (opcional caso nao queira só remover esta linha de codigo abaixo) INICIO
-$newvalue="dev.song	"+$addr;
+$newvalue=$addr+"	dev.song";
 $lineHosts = (Get-Content "$($env:windir)\system32\Drivers\etc\hosts" ) -Match "dev.song";
 (Get-Content C:\Windows\system32\Drivers\etc\hosts).replace($lineHosts, $newvalue) | Set-Content C:\Windows\system32\Drivers\etc\hosts
 #Reescrevendo FIM
